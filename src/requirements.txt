@@ -1,0 +1,2 @@
+fastapi==0.44.0
+-e git+https://github.com/brandongallagher1999/PirateBayAPI-Fix.git#egg=tpb
