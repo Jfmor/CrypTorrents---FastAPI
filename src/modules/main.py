@@ -5,6 +5,7 @@ from starlette.requests import Request
 from starlette.staticfiles import StaticFiles
 from database.database import Database
 
+
 app = FastAPI()
 db = Database()
 
@@ -26,6 +27,6 @@ async def root(request: Request):
 async def display_torrent(request: Request, torrent: str):
     d: dict = {
         "request" : request,
-        "torrents" : db.get_torrents(torrent)
+        "torrents" : db.get_torrents(torrent),
     }
-    return templates.TemplateResponse("base.html", d)
+    return templates.TemplateResponse("torrent.html", d)

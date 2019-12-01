@@ -1,11 +1,13 @@
 from tpb import TPB
 from tpb import ORDERS
 from typing import List
+from database.image_api import ImageAPI
 
 class Database():
     
     def __init__(self):
 
+        self.iAPI = ImageAPI()
         self.website = TPB("https://thepiratebay.org/") #Base URL for ThePirateBay
 
     def get_none(self) -> List[dict]:
@@ -19,14 +21,19 @@ class Database():
         counter: int = 0
         obj: List[dict]= []
 
+        button_id: str = "pirate_button_"
+        button_count: int = 1
+
         for torrent in self.website.search(req).order(ORDERS.SEEDERS.DES):
             if counter <= 2:
                 obj.append(
                     {
                         "name" : torrent.title,
                         "magnet" : torrent.magnet_link,
-                        "image" : "123",
+                        "image_url" : self.iAPI.get_image(req),
+                        "button_id" : button_id + str(button_count),
                     }
                 )
             counter += 1
+            button_count += 1
         return obj
