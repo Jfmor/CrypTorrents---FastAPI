@@ -9,7 +9,7 @@ class ImageAPI():
     def get_image(self, name: str) -> str:
         
         '''
-        Gets an image URL from SerpAPI
+        Gets an image URL from DuckDuckGo API
 
         @param {str} name: name of the image to lookup
         @return {str} url of the thing to look up (movie, game, book, etc)

@@ -1,2 +1,5 @@
 fastapi==0.44.0
 -e git+https://github.com/brandongallagher1999/PirateBayAPI-Fix.git#egg=tpb
+aiofiles==0.4.0
+uvicorn==0.10.8
+Jinja2==2.10.3
