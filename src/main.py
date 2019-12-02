@@ -1,18 +1,18 @@
+import sys
 
 from fastapi import FastAPI
 from starlette.templating import Jinja2Templates
 from starlette.requests import Request
 from starlette.staticfiles import StaticFiles
-from database.database import Database
-
-
+sys.path.append("./modules/database")
+from database import Database
 app = FastAPI()
 db = Database()
 
-app.mount("/static", StaticFiles(directory="../static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 #Templates directory instance
-templates = Jinja2Templates(directory = "../templates")
+templates = Jinja2Templates(directory = "./templates")
 
 @app.get("/")
 async def root(request: Request):

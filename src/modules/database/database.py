@@ -1,7 +1,10 @@
+import sys
+sys.path.append(".")
+
 from tpb import TPB
 from tpb import ORDERS
 from typing import List
-from database.image_api import ImageAPI
+from image_api import ImageAPI
 
 class Database():
     
