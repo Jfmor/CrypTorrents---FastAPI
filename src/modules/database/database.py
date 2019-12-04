@@ -7,6 +7,10 @@ from typing import List
 from image_api import ImageAPI
 
 class Database():
+    '''
+    This class allows my endpoints to interact with the database as well as retrieve
+    information from ThePirateBay's database.
+    '''
     
     def __init__(self):
 
@@ -14,6 +18,12 @@ class Database():
         self.website = TPB("https://thepiratebay.org/") #Base URL for ThePirateBay
 
     def get_none(self) -> List[dict]:
+        '''
+        Returns an empty torrent object
+
+        @returns -> None
+        '''
+
         return [{
             "name" : "",
             "magnet" : "",
@@ -21,6 +31,13 @@ class Database():
         }]
 
     def get_torrents(self, req: str) -> List[dict]:
+        '''
+        Gets all torrents relative to the search query.
+
+        @param {str} req: The search query to be made to ThePirateBay
+        @returns {List[dict]} 3 top torrent results sorted by seeders.
+        '''
+
         counter: int = 0
         obj: List[dict]= []
 

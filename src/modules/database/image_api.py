@@ -2,8 +2,11 @@ from requests import Session
 import json
 
 class ImageAPI():
-
+    '''
+    This class interacts with DuckDuckGo image API to retrive certain images via URL.
+    '''
     def __init__(self):
+        #To make HTTP Requests.
         self.s = Session()
 
     def get_image(self, name: str) -> str:
