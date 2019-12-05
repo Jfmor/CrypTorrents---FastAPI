@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from starlette.templating import Jinja2Templates
 from starlette.requests import Request
 from starlette.staticfiles import StaticFiles
+from starlette import responses
 sys.path.append("./modules/database")
 from database import Database
 app = FastAPI()
@@ -29,8 +30,8 @@ async def root(request: Request):
     return templates.TemplateResponse("base.html", d)
 
 
-@app.get("/torrent/{torrent}")
-async def display_torrent(request: Request, torrent: str):
+@app.get("/torrents/{torrent}")
+async def display_torrent_page(request: Request, torrent: str):
     '''
     Retrieves a torrent based on the torrent query, with top 3 results.
 

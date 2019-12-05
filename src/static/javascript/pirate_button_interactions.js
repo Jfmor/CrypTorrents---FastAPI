@@ -8,7 +8,7 @@ function init_button(id, magnet)
 
 $(document).ready(function () {
     $("#my-btn-search").on("click", function () {
-        let query = $("#my-form-query").val();
-        window.location.href = "/torrent/" + query;
+        let url = "/torrents/" + $("#my-form-query").val();
+        document.location.href = url;
     });
 });
