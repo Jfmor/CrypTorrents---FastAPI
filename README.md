@@ -24,8 +24,8 @@ sorted by Seeders, and displays them beside a relevant picture from DuckDuckGo A
 ## Container
 1. Go into /src/ folder
 2. Open CMD
-3. "docker build -t <imageName> .
-4. docker run -d --name <containerName> -p 80:80 <imageName>
+3. "docker build -t imageName .
+4. docker run -d --name containerName -p 80:80 imageName
   
 ## Opening Web App
 1. Go into any browser, preferably Google Chrome
