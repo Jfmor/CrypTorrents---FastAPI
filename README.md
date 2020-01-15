@@ -2,6 +2,8 @@
 
                                                                                 Version: Release v1.2
 
+![Skull Icon](https://cdn3.iconfinder.com/data/icons/universal-signs-symbols/128/pirate-sword-skull2-512.png)
+
 ## Github project URL
 https://github.com/brandongallagher1999/CrypTorrents---FastAPI/
 
